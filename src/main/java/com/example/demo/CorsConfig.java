@@ -12,10 +12,14 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")               // разрешить все пути
-                        .allowedOrigins("http://localhost:3000")  // разрешить фронтенд (React dev сервер)
+                registry.addMapping("/**")
+                        .allowedOrigins(
+                            "http://localhost:3000", 
+                            "https://domix.vercel.app"
+                        )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*");
+                        .allowedHeaders("*")
+                        .allowCredentials(true); // если используешь cookies / auth
             }
         };
     }
