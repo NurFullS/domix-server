@@ -52,7 +52,7 @@ public class AdController {
 
             List<String> images = adRequest.getImage_url();
             if (images != null) {
-                ad.setImageUrl(images);  // Сохраняем список как есть
+                ad.setImageUrl(images); // Сохраняем список как есть
             } else {
                 ad.setImageUrl(List.of()); // пустой список вместо null
             }
@@ -72,6 +72,22 @@ public class AdController {
     @GetMapping
     public List<Ad> getAllAds() {
         return adRepo.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getAdById(@PathVariable Long id) {
+        Optional<Ad> adOpt = adRepo.findById(id);
+        if (adOpt.isPresent()) {
+            return ResponseEntity.ok(adOpt.get());
+        } else {
+            return ResponseEntity.status(404).body("Объявление не найдено");
+        }
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Ad>> searchAds(@RequestParam String keyword) {
+        List<Ad> results = adRepo.findByTitleContainingIgnoreCaseOrCategoryContainingIgnoreCase(keyword, keyword);
+        return ResponseEntity.ok(results);
     }
 
     @GetMapping("/my")

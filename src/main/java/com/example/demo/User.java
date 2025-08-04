@@ -19,6 +19,8 @@ public class User {
 
     private String password;
 
+    private String avatarUrl;
+
     @Column(name = "telefon_number")
     private String telefonNumber;
 
@@ -26,7 +28,6 @@ public class User {
     @JsonManagedReference
     private List<Ad> ads;
 
-    // --- DTO для сброса пароля ---
     public static class ResetPasswordRequest {
         private String currentPassword;
         private String newPassword;
@@ -72,6 +73,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
     public String getPassword() {

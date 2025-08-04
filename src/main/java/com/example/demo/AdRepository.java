@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface AdRepository extends JpaRepository<Ad, Long> {
     List<Ad> findByUser(User user);
+
     void deleteAllByUser(User user);
+
+    List<Ad> findByTitleContainingIgnoreCaseOrCategoryContainingIgnoreCase(String title, String category);
 
 }
