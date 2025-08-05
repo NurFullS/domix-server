@@ -1,0 +1,13 @@
+name: Ping Render
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # каждые 10 минут
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Render server
+        run: curl https://domix-server.onrender.com/
