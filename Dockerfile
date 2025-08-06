@@ -14,7 +14,6 @@ FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-# Копируем собранный .jar из предыдущего этапа
 COPY --from=build /app/target/*.jar app.jar
 
 # Запускаем Spring Boot приложение

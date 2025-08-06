@@ -50,11 +50,32 @@ public class AdController {
             ad.setCity(adRequest.getCity());
             ad.setPhone(adRequest.getPhone());
 
+            // --- Заполняем все поля из AdRequest в Ad ---
+
+            ad.setLandSize(adRequest.getLandSize());
+            ad.setHouseArea(adRequest.getHouseArea());
+            ad.setRooms(adRequest.getRooms());
+            ad.setFloor(adRequest.getFloor());
+            ad.setBuildingType(adRequest.getBuildingType());
+
+            ad.setBrand(adRequest.getBrand());
+            ad.setModel(adRequest.getModel());
+            ad.setYear(adRequest.getYear());
+            ad.setMileage(adRequest.getMileage());
+            ad.setFuel(adRequest.getFuel());
+            ad.setTransmission(adRequest.getTransmission());
+
+            ad.setCondition(adRequest.getCondition());
+            ad.setWarranty(adRequest.getWarranty());
+
+            ad.setSize(adRequest.getSize());
+            ad.setGender(adRequest.getGender());
+
             List<String> images = adRequest.getImage_url();
             if (images != null) {
-                ad.setImageUrl(images); // Сохраняем список как есть
+                ad.setImageUrls(images);
             } else {
-                ad.setImageUrl(List.of()); // пустой список вместо null
+                ad.setImageUrls(List.of());
             }
 
             ad.setUser(userOpt.get());

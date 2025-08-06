@@ -40,90 +40,112 @@ public class Ad {
     @JsonBackReference
     private User user;
 
+    // --- Дополнительные поля ---
+
+    // Недвижимость
+    private Double landSize;
+    private Double houseArea;
+    private Integer rooms;
+    private Integer floor;
+    private String buildingType;
+
+    // Транспорт
+    private String brand;
+    private String model;
+    private Integer year;
+    private Integer mileage;
+    private String fuel;
+    private String transmission;
+
+    // Электроника
+    private String condition;
+    private Boolean warranty;
+
+    // Одежда
+    private String size;
+    private String gender;
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
 
-    // Геттеры и сеттеры
+    // Геттеры и сеттеры для всех полей (сгенерировать IDE или написать вручную)
+    // Ниже пример для нескольких полей:
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
 
-    public double getPrice() {
-        return price;
-    }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    public List<String> getImageUrls() { return imageUrls; }
+    public void setImageUrls(List<String> imageUrls) { this.imageUrls = imageUrls; }
 
-    public String getCategory() {
-        return category;
-    }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
 
-    public String getCity() {
-        return city;
-    }
+    public Double getLandSize() { return landSize; }
+    public void setLandSize(Double landSize) { this.landSize = landSize; }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+    public Double getHouseArea() { return houseArea; }
+    public void setHouseArea(Double houseArea) { this.houseArea = houseArea; }
 
-    public String getPhone() {
-        return phone;
-    }
+    public Integer getRooms() { return rooms; }
+    public void setRooms(Integer rooms) { this.rooms = rooms; }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    public Integer getFloor() { return floor; }
+    public void setFloor(Integer floor) { this.floor = floor; }
 
-    public List<String> getImageUrl() {
-        return imageUrls;
-    }
+    public String getBuildingType() { return buildingType; }
+    public void setBuildingType(String buildingType) { this.buildingType = buildingType; }
 
-    public void setImageUrl(List<String> imageUrls) {
-        this.imageUrls = imageUrls;
-    }
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+    public Integer getYear() { return year; }
+    public void setYear(Integer year) { this.year = year; }
 
-    public User getUser() {
-        return user;
-    }
+    public Integer getMileage() { return mileage; }
+    public void setMileage(Integer mileage) { this.mileage = mileage; }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+    public String getFuel() { return fuel; }
+    public void setFuel(String fuel) { this.fuel = fuel; }
+
+    public String getTransmission() { return transmission; }
+    public void setTransmission(String transmission) { this.transmission = transmission; }
+
+    public String getCondition() { return condition; }
+    public void setCondition(String condition) { this.condition = condition; }
+
+    public Boolean getWarranty() { return warranty; }
+    public void setWarranty(Boolean warranty) { this.warranty = warranty; }
+
+    public String getSize() { return size; }
+    public void setSize(String size) { this.size = size; }
+
+    public String getGender() { return gender; }
+    public void setGender(String gender) { this.gender = gender; }
+
 }
