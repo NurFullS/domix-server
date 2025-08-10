@@ -11,16 +11,12 @@ public class AdRequest {
     private String phone;
     private List<String> image_url;
 
-    // --- Дополнительные поля ---
+    private Double landSize;
+    private Double houseArea;
+    private Integer rooms;
+    private Integer floor;
+    private String buildingType;
 
-    // Недвижимость
-    private Double landSize;      // площадь участка (сотки)
-    private Double houseArea;     // площадь дома (м²)
-    private Integer rooms;        // количество комнат
-    private Integer floor;        // этаж
-    private String buildingType;  // тип здания
-
-    // Транспорт
     private String brand;
     private String model;
     private Integer year;
@@ -28,15 +24,11 @@ public class AdRequest {
     private String fuel;
     private String transmission;
 
-    // Электроника
-    private String condition;     // состояние
+    private String condition;  
     private Boolean warranty;
 
-    // Одежда
     private String size;
     private String gender;
-
-    // --- Геттеры и сеттеры для всех полей ---
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }

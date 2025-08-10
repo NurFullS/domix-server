@@ -50,8 +50,6 @@ public class AdController {
             ad.setCity(adRequest.getCity());
             ad.setPhone(adRequest.getPhone());
 
-            // --- Заполняем все поля из AdRequest в Ad ---
-
             ad.setLandSize(adRequest.getLandSize());
             ad.setHouseArea(adRequest.getHouseArea());
             ad.setRooms(adRequest.getRooms());

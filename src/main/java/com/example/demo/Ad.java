@@ -40,16 +40,12 @@ public class Ad {
     @JsonBackReference
     private User user;
 
-    // --- Дополнительные поля ---
-
-    // Недвижимость
     private Double landSize;
     private Double houseArea;
     private Integer rooms;
     private Integer floor;
     private String buildingType;
 
-    // Транспорт
     private String brand;
     private String model;
     private Integer year;
@@ -57,11 +53,9 @@ public class Ad {
     private String fuel;
     private String transmission;
 
-    // Электроника
     private String condition;
     private Boolean warranty;
 
-    // Одежда
     private String size;
     private String gender;
 
@@ -69,9 +63,6 @@ public class Ad {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
-
-    // Геттеры и сеттеры для всех полей (сгенерировать IDE или написать вручную)
-    // Ниже пример для нескольких полей:
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

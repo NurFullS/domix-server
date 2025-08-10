@@ -56,7 +56,6 @@ public class UserController {
 
     public static class UpdateUsernameRequest {
         private String username;
-
         public String getUsername() {
             return username;
         }

@@ -49,8 +49,6 @@ public class User {
         }
     }
 
-    // --- Геттеры и сеттеры ---
-
     public Long getId() {
         return id;
     }

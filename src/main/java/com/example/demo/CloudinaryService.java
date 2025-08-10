@@ -14,7 +14,7 @@ public class CloudinaryService {
 
     public CloudinaryService() {
         this.cloudinary = new Cloudinary(ObjectUtils.asMap(
-                "cloud_name", "dop4mtq1t", 
+                "cloud_name", "dop4mtq1t",
                 "api_key", "293689374536852",
                 "api_secret", "dhAhHNVpXSpMicpMIFLd8a4F3FM"));
     }
